@@ -1,0 +1,26 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: a
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v6
+
+    - name: Install dep
+      run: choco install mingw
+      
+    - name: Build
+      run: g++ RedSun.cpp -o redsun
+      
+    - name: Artifact
+      run: |
+        mkdir artifacts
+        cp redsun artifacts/
